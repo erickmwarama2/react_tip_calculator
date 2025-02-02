@@ -35,8 +35,12 @@ function App() {
         onSetSelfRate={handleSetSelfRate}
         onSetFriendRate={handleSetFriendRate}
       />
-      <TipCalculator bill={billAmt} rate={avgTipRate} />
-      <ResetButton onReset={handleReset} />
+      {billAmt && (
+        <>
+          <TipCalculator bill={billAmt} rate={avgTipRate} />
+          <ResetButton onReset={handleReset} />
+        </>
+      )}
     </div>
   );
 }
